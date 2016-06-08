@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.azotan.clock.AppController">
+   <center>
+      <StackPane prefHeight="468.0" prefWidth="600.0">
+         <children>
+            <Circle radius="220.0" stroke="BLACK" strokeType="INSIDE">
+               <StackPane.margin>
+                  <Insets top="100.0" />
+               </StackPane.margin>
+               <fill>
+                  <RadialGradient centerX="0.5111111111111111" centerY="0.5" focusAngle="169.99" radius="0.7325581395348837">
+                     <stops>
+                        <Stop color="#ffbe27" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <Line fx:id="minutesLine" endX="100.0" rotate="90.0" startX="-100.0" strokeWidth="2.0">
+               <StackPane.margin>
+                  <Insets top="-100.0" />
+               </StackPane.margin>
+            </Line>
+            <Line fx:id="hoursLine" endX="100.0" layoutX="-0.0" rotate="90.0" startX="-60.0" strokeWidth="4.0">
+               <StackPane.margin>
+                  <Insets top="-60.0" />
+               </StackPane.margin>
+            </Line>
+            <Line fx:id="secondsLine" endX="100.0" rotate="90.0" startX="-100.0" BorderPane.alignment="CENTER">
+               <StackPane.margin>
+                  <Insets top="-100.0" />
+               </StackPane.margin>
+            </Line>
+         </children>
+      </StackPane>
+   </center>
+   <top>
+      <Button fx:id="button" mnemonicParsing="false" onAction="#buttonClicked" text="Button" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
