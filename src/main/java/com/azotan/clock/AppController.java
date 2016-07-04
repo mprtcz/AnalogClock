@@ -33,30 +33,28 @@ public class AppController {
             public Void call() throws Exception {
                 System.out.println("Started...");
                 while(true) {
-                    Platform.runLater(new Runnable() {
-                        public void run() {
+                    Platform.runLater(() -> {
 
-                            d.setTime(System.currentTimeMillis());
-                            hour = d.getHours();
-                            minute = d.getMinutes();
-                            second = d.getSeconds();
+                        d.setTime(System.currentTimeMillis());
+                        hour = d.getHours();
+                        minute = d.getMinutes();
+                        second = d.getSeconds();
 
-                            rotSec.setAngle(0);
-                            rotMin.setAngle(0);
-                            rotHr.setAngle(0);
+                        rotSec.setAngle(0);
+                        rotMin.setAngle(0);
+                        rotHr.setAngle(0);
 
-                            rotSec.setAngle(6*second);
-                            rotMin.setAngle(6*minute);
-                            rotHr.setAngle(30*hour + 0.5*minute);
+                        rotSec.setAngle(6*second);
+                        rotMin.setAngle(6*minute);
+                        rotHr.setAngle(30*hour + 0.5*minute);
 
-                            secondsLine.getTransforms().clear();
-                            minutesLine.getTransforms().clear();
-                            hoursLine.getTransforms().clear();
+                        secondsLine.getTransforms().clear();
+                        minutesLine.getTransforms().clear();
+                        hoursLine.getTransforms().clear();
 
-                            secondsLine.getTransforms().add(rotSec);
-                            minutesLine.getTransforms().add(rotMin);
-                            hoursLine.getTransforms().add(rotHr);
-                        }
+                        secondsLine.getTransforms().add(rotSec);
+                        minutesLine.getTransforms().add(rotMin);
+                        hoursLine.getTransforms().add(rotHr);
                     });
                     Thread.sleep(100);
                 }
