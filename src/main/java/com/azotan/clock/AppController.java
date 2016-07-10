@@ -20,8 +20,8 @@ public class AppController {
 
     public void buttonClicked() throws InterruptedException {
 
-        //button.setDisable(true);
         isRunning = !isRunning;
+
         if(isRunning){
             button.setText("Stop Animation");
         } else {
